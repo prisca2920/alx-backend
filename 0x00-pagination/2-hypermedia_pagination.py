@@ -44,7 +44,7 @@ class Server:
         except IndexError:
             return []
 
-    def get_hyper(self, page: int = 1, page_size: int = 10) -> dict
+    def get_hyper(self, page: int = 1, page_size: int = 10) -> dict:
         """hypermedia pagination"""
         total_pages = math.ceil(len(self.dataset()) / page_size)
         return {
