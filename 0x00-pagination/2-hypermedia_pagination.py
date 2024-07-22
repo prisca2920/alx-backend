@@ -2,7 +2,7 @@
 """a funct that returns the start and end index"""
 import csv
 import math
-from typing import Tuple, List, Dict, Any
+from typing import Tuple, List
 
 
 def index_range(page: int, page_size: int) -> Tuple[int, int]:
@@ -44,7 +44,7 @@ class Server:
         except IndexError:
             return []
 
-    def get_hyper(self, page: int = 1, page_size: int = 10) -> Dict[str: Any]:
+    def get_hyper(self, page: int = 1, page_size: int = 10) -> dict
         """hypermedia pagination"""
         total_pages = math.ceil(len(self.dataset()) / page_size)
         return {
