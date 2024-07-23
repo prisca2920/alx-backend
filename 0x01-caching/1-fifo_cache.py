@@ -15,10 +15,11 @@ class FIFOCache(BaseCaching):
         if item is None or key is None:
             pass
         else:
-            if len(self.cache_data) > BaseCaching.MAX_ITEMS:
+            if len(self.cache_data) >= BaseCaching.MAX_ITEMS \
+                    and key not in self.cache_data:
                 item_deleted = self.key_index.pop(0)
-                del self.cache_data[item_deleted]
                 print("DISCARD:", item_deleted)
+                del self.cache_data[item_deleted]
 
             self.cache_data[key] = item
             self.key_index.append(key)
